@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.WindowCompat
 import com.loc.newsapp.presentation.onboarding.OnBoardingScreen
 import com.loc.newsapp.presentation.onboarding.components.OnBoardingPage
 import com.loc.newsapp.ui.theme.NewsAppTheme
@@ -20,6 +21,7 @@ import com.loc.newsapp.ui.theme.NewsAppTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false) //ustteki durum cubugu kismini saklama (status bar)
         installSplashScreen()
         setContent {
             NewsAppTheme {
